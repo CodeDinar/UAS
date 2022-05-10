@@ -20,7 +20,7 @@ body{background-image: url("https://i.postimg.cc/dtnfMN6c/IMG-20211103-181126-88
 
 <div id='scrollImage'>
   <p>Hai&nbsp;<b id="kamu"></b>&nbsp;manis ><</p>
-  <p>cieee besok udah uts</p>
+  <p>cieee besok udah uas</p>
   <p>Maaf gak bisa kasih hadiah</p>
   <p>sehat selalu yahh</p>
   <p>Makin pusing aja nih wkwk</p>
@@ -40,7 +40,7 @@ body{background-image: url("https://i.postimg.cc/dtnfMN6c/IMG-20211103-181126-88
 <div id="contTom"><a class='button whatsapp' onClick='bukaWa();'><i class='icon whatsapp'></i>Kirim</a></div></div>
 <script>  
 var a=0,finish;
-finish = "Selamat Ujian Tengah Semester";
+finish = "Selamat Ujian Akhir Semester";
             
 //Opsi WhatsApp
  function bukaWa(){window.location = "https://api.whatsapp.com/send?phone=&text=Hai, Aku udah bacain semuanya. Makasih yaaa" + " *" + author + "* " + "udah bikinin ini semua *Loveyou*" + "%0A%0A" + "*" + "Dikirim:" + "*" + "%20" + dateTime;} 
@@ -60,25 +60,9 @@ finish = "Selamat Ujian Tengah Semester";
                     confirmButtonText: 'Lanjut',
                     showCancelButton: false,
                 });                           
-                if(nama){
-                	window.nama = nama;
-                    finish = finish + ", " + nama + "!";    
-                    document.getElementById("kamu").innerHTML = "" + window.nama;                      
-                	var { value: author } = await swals.fire({
-                    title: nama + ' tau Aku siapa? Spill namanya dong!',
-                    input: 'text',
-                    confirmButtonText: 'Lanjut',
-                    showCancelButton: false,
-                    });                
-                  if(author != nama){
-                    document.getElementById("sp1").innerHTML = "Dari " + author + ", Untuk " + window.nama + "!";
-                	window.author = author;                   
+                if(nama){              
                     await swals.fire(`Sekarang lihat ini ya &#10084;&#65039;`);
-                    setTimeout(showDiv, 100);                                    
-                  } else {
-                    await swals.fire('Nama tidak boleh kosong/sama dengan nama kamu!');
-                    mulai();
-                  }
+                    setTimeout(showDiv, 100);                          
                 } else {
                     await swals.fire('Nama tidak boleh kosong, ya!');
                     mulai();
