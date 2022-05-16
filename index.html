@@ -17,8 +17,12 @@ body{background-image: url("https://i.postimg.cc/dtnfMN6c/IMG-20211103-181126-88
 <audio style="display:none;margin:20px 0;" controls autoplay loop>
   <source src="https://www.youtube.com/embed/L2XSg_8vNBE" type="audio/mpeg">
 </audio>
-
+ 
+function play() {//Link Audio Bisa Diganti
+var audio = new Audio('lagu.mp3');audio.play();} 
+ 
 <div id='scrollImage'>
+ <script type="text/javascript"> play(); </script>
   <p>Hai&nbsp;<b id="kamu"></b>&nbsp;manis ><</p>
   <p>cieee besok udah uas</p>
   <p>Maaf gak bisa kasih hadiah</p>
@@ -63,22 +67,10 @@ finish = "Selamat Ujian Akhir Semester";
                 if(nama){
                 	window.nama = nama;
                     finish = finish + ", " + nama + "!";    
-                    document.getElementById("kamu").innerHTML = "" + window.nama;                      
-                	var { value: author } = await swals.fire({
-                    title: nama + ' tau Aku siapa? Spill namanya dong!',
-                    input: 'text',
-                    confirmButtonText: 'Lanjut',
-                    showCancelButton: false,
-                    });                
-                  if(author != nama){
-                    document.getElementById("sp1").innerHTML = "Dari " + author + ", Untuk " + window.nama + "!";
-                	window.author = author;                   
+                    document.getElementById("kamu").innerHTML = "" + window.nama;
+                    document.getElementById("sp1").innerHTML = "Dari Dinar, Untuk " + window.nama + "!";                 
                     await swals.fire(`Sekarang lihat ini ya &#10084;&#65039;`);
-                    setTimeout(showDiv, 100);                                    
-                  } else {
-                    await swals.fire('Nama tidak boleh kosong/sama dengan nama kamu!');
-                    mulai();
-                  }
+                    setTimeout(showDiv, 100); 
                 } else {
                     await swals.fire('Nama tidak boleh kosong, ya!');
                     mulai();
